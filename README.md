@@ -1,5 +1,5 @@
 # argocd-tutorial
-Playarond with argocd with Kind
+Play around with argocd with Kind
 
 ## create K8s cluster with configuration 
 kind create cluster --config config-kind.yml
