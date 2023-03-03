@@ -13,3 +13,7 @@ kubectl apply -n argocd -f argocd.yaml
 ## To connect ArgoCD web UI
 
 port forward 80 on the host to 30950 (NodePort) on the kind node
+
+## Passowrd to connect web UI
+
+kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
