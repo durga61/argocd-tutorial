@@ -20,9 +20,15 @@ port forward 8443  on the host to 443  on the kind node
 
 kubectl port-forward -n argocd service/argocd-server 8443:443
 
-
-
-
 ## Passowrd to connect web UI
 
 kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
+
+### Deploy nginx app via argocd and port forward cluserIP
+kubectl get svc
+
+NAME           TYPE        CLUSTER-IP    EXTERNAL-IP   PORT(S)   AGE
+kubernetes     ClusterIP   10.96.0.1     <none>        443/TCP   83m
+nginx-argocd   ClusterIP   10.96.97.94   <none>        80/TCP    8m4s
+
+kubectl port-forward svc/nginx-argocd 9092:80
