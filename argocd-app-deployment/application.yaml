@@ -1,0 +1,14 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: my-app
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/durga61/argocd-tutorial.git
+    targetRevision: HEAD
+    path: nginix-manifest
+  destination:
+    server: https://kubernetes.default.svc
