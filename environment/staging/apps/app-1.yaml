@@ -2,7 +2,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: my-app
+  name: app-1
   namespace: argocd
   # force argocd to delete the k8s app first and then removes it from argocd 
   finalizers:

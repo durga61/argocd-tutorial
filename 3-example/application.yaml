@@ -2,7 +2,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: app-2
+  name: mutiapps-deployment
   namespace: argocd
   # force argocd to delete the k8s app first and then removes it from argocd 
   finalizers:
@@ -12,7 +12,7 @@ spec:
   source:
     repoURL: https://github.com/durga61/argocd-tutorial.git
     targetRevision: HEAD
-    path: environment/staging/app-2
+    path: environment/staging/apps
   destination:
     server: https://kubernetes.default.svc
   syncPolicy:
