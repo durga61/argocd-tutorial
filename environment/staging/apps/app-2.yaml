@@ -12,7 +12,7 @@ spec:
   source:
     repoURL: https://github.com/durga61/argocd-tutorial.git
     targetRevision: HEAD
-    path: nginix-manifest
+    path: environment/staging/app-2
   destination:
     server: https://kubernetes.default.svc
   syncPolicy:
